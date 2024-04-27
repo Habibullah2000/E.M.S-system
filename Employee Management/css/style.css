@@ -1,0 +1,1774 @@
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* root variable */
+
+:root {
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-primary-variant: #111e88;
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-raduis: 2rem;
+  --border-raduis-1: 0.4rem;
+  --border-raduis-1: 0.4rem;
+  --border-raduis-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* ================== DARK THEME VARIABLES ================== */
+
+.dark-theme-variables {
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-variant: #a3bdcc;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  color: var(--color-dark);
+  width: 100vw;
+  height: 100vh;
+  font-family: poppins, sans-serif;
+  font-size: 0.88rem;
+  background: var(--color-background);
+  user-select: none;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 96%;
+  margin: 0 auto;
+  gap: 1.8rem;
+}
+
+a {
+  color: var(--color-dark);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 0.87rem;
+}
+
+h4 {
+  font-size: 0.8rem;
+}
+
+h5 {
+  font-size: 0.77rem;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+.profile-photo {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.text-muted {
+  color: var(--color-info-dark);
+}
+
+p {
+  color: var(--color-dark-variant);
+}
+
+b {
+  color: var(--color-dark);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
+.btn,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 2.8rem;
+  padding: 0.2rem 2rem;
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: var(--color-white);
+  border-radius: var(--border-raduis-1);
+  border: 1px solid #bbb;
+  cursor: pointer;
+  -webkit-transition: border 0.2s;
+  transition: border 0.2s;
+}
+
+.btn:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0;
+}
+
+.btn:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+  color: #222;
+  border-color: #222;
+}
+
+aside {
+  height: 95vh;
+}
+
+aside .close {
+  margin-top: 1rem;
+  float: right;
+  display: none;
+}
+
+/* Header start */
+/* header {
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+  background: #fff;
+} */
+
+header .header-center {
+  max-width: 1960px;
+  width: 100%;
+  margin: 0;
+  max-height: 5rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 5rem;
+}
+
+.right-section button {
+  display: none;
+}
+
+.header-center .right-section .theme-toggler {
+  background: var(--color-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.6rem;
+  width: 4.2rem;
+  cursor: pointer;
+  border-radius: var(--border-raduis-1);
+}
+
+.header-center .right-section .theme-toggler span {
+  font-size: 1.2rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-center .right-section .theme-toggler span.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--border-raduis-1);
+}
+
+.header-center .right-section .profile {
+  display: flex;
+  gap: 2rem;
+  text-align: center;
+}
+
+.header-center .sub-menu-wrap {
+  position: absolute;
+  top: 6%;
+  right: 0;
+  width: 280px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  z-index: 6;
+}
+
+.header-center .sub-menu-wrap.open-menu {
+  max-height: 400px;
+}
+
+.header-center .sub-menu-wrap .sub-menu {
+  background: #fff;
+  padding: 20px;
+  margin: 10px;
+}
+
+.header-center .sub-menu-wrap .sub-menu .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.header-center .user-info h2 {
+  font-weight: 600;
+}
+
+.header-center .user-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.header-center .sub-menu hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #ccc;
+  margin: 15px 0 10px;
+}
+
+.header-center .sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #525252;
+  margin: 12px 0;
+}
+
+.header-center .sub-menu-link p {
+  width: 100%;
+  font-weight: 500;
+}
+
+.header-center .sub-menu-link span {
+  font-size: 24px;
+  border-radius: 50%;
+}
+
+.header-center .sub-menu-link span:nth-child(1) {
+  margin-right: 15px;
+  background-color: #e5e5e5;
+  padding: 10px;
+}
+
+.header-center .sub-menu-link .angle {
+  font-size: 25px;
+  transition: transform 0.5s;
+}
+
+.header-center .sub-menu-link:hover span.angle {
+  transform: translateX(5px);
+}
+
+.header-center .sub-menu-link:hover p {
+  font-weight: 900;
+}
+
+header .header-center .left-section {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin: 0 1.5em;
+}
+
+header .left-section a {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  color: #363949;
+}
+header .left-section h2 {
+  margin-top: 0.5rem;
+  font-weight: 900;
+}
+header .left-section h2 span {
+  color: #ff7782;
+}
+header .left-section img {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
+  color: #3c4254;
+}
+
+/* Header end */
+aside .sidebar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 2rem;
+  /* overflow-y: scroll; */
+  padding-right: 2rem;
+}
+
+aside .sidebar h3 {
+  font-weight: 500;
+}
+
+aside .sidebar .sidebar-item {
+  display: flex;
+  color: var(--color-info-dark);
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  height: 3.7rem;
+  transition: all 300ms ease;
+}
+
+aside .sidebar .sidebar-item span {
+  font-size: 1.6rem;
+  transition: all 300ms ease;
+}
+
+aside .sidebar .sidebar-item:last-child {
+  /* position: absolute;
+bottom: 2rem;
+margin-top: 10rem;
+width: 100%; */
+  margin-top: 6rem;
+}
+
+aside .sidebar .sidebar-item.active {
+  background: var(--color-light);
+  color: var(--color-primary);
+  margin-left: 0;
+}
+
+aside .sidebar .sidebar-item.active:before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  background: var(--color-primary);
+}
+
+aside .sidebar .sidebar-item.active span {
+  color: var(--color-primary);
+  margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar .sidebar-item:hover {
+  color: var(--color-primary);
+}
+
+aside .sidebar .sidebar-item:hover span {
+  margin-left: 1rem;
+}
+
+aside .sidebar .sidebar-item .message-count {
+  background: var(--color-danger);
+  color: var(--color-white);
+  padding: 2px 10px;
+  font-size: 14px;
+  border-radius: var(--border-raduis-1);
+}
+
+.sidebar .top {
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+}
+
+.sidebar .top button {
+  display: none;
+}
+
+/* Sidebar end */
+main {
+  position: relative;
+  max-width: 1960px;
+  width: 100%;
+}
+main .main {
+  display: flex;
+}
+main .content {
+  width: 100%;
+  margin-top: -1rem;
+  margin-right: 1em;
+  padding: 1em;
+}
+/* 
+.routes {
+color: #363949;
+font-size: 1rem;
+min-height: 2em;
+max-width: 1960px;
+padding: 0.5em 1em;
+display: flex;
+margin: 0 auto;
+}
+.routes span {
+display: flex;
+align-items: start;
+}
+
+.routes span i {
+font-size: 0.8rem;
+margin: 0.3rem 0.5rem 0 0.5rem;
+} */
+
+main .date {
+  display: inline-block;
+  background: var(--color-light);
+  border-radius: var(--border-raduis-1);
+  margin-top: 1rem;
+  padding: 0.5rem 1.6rem;
+}
+
+main .date input[type="date"] {
+  background: transparent;
+  color: var(--color-dark);
+}
+
+main .insights {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main .insights > div {
+  width: 330px;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: center;
+  background: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-raduis);
+  margin: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+main .insights > div:hover {
+  box-shadow: none;
+}
+
+main .insights > div span {
+  background-color: var(--color-primary);
+  padding: 1.5rem;
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 2rem;
+}
+main .insights > div {
+  text-align: right;
+}
+
+main .insights > div .number {
+  font-size: 3rem;
+}
+
+main .insights h3 {
+  margin: 1rem 0 0.6rem;
+  font-size: 1rem;
+}
+
+/* ======================== Main ==================== */
+
+main .content .dashbord-orders .recent-orders {
+  margin-top: 2rem;
+}
+
+main .content .recent-orders table {
+  background: var(--color-white);
+  width: 100%;
+  border-radius: var(--card-border-raduis);
+  padding: var(--card-padding);
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+  text-align: center;
+}
+
+main .content .recent-orders table:hover {
+  box-shadow: none;
+}
+
+main .content .recent-orders table tbody td {
+  height: 2.8rem;
+  border-bottom: 1px solid var(--color-light);
+  color: var(--color-dark-variant);
+}
+
+main .content .recent-orders table tbody td.success {
+  color: var(--color-success);
+}
+
+main .content .recent-orders table tbody td.danger {
+  color: var(--color-danger);
+}
+
+main .content .recent-orders table tbody tr:last-child td {
+  border: none;
+}
+
+main .content .recent-orders a {
+  display: block;
+  text-align: center;
+  margin: 1rem auto;
+  color: var(--color-primary);
+}
+
+/* main end */
+
+/* Owner page and Tenant pages*/
+/* main .content {
+  margin-left: 3rem;
+} */
+
+main .content .owners .left,
+main .content .tenants .left,
+main .content .houses .left,
+main .content .assign-houses .left,
+main .content .orders .left,
+main .content .users .left {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-start;
+}
+
+main .content .left h1 {
+  font-size: 2.8rem;
+}
+
+main .content .owners-title .left,
+main .content .tenats-title .left,
+main .content .houses-title .left,
+main .content .assign-houses-title .left,
+main .content .orders-title .left,
+main .content .payments-title .left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+main .content .owner-header,
+main .content .tenant-header,
+main .content .house-header,
+main .content .assign-house-header,
+main .content .order-header,
+main .content .payment-header,
+main .content .user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: -5rem; */
+  background-color: var(--color-primary);
+  padding: var(--padding-1);
+  color: #fff;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+main .content .owners .recent-orders table,
+main .content .tenants .recent-orders table,
+main .content .houses .recent-orders table,
+main .content .assign-houses .recent-orders table,
+main .content .orders .recent-orders table,
+main .content .payments .recent-orders table,
+main .content .recent-orders table,
+main .content .owners-details .recent-orders table,
+main .content .tenants-details .recent-orders table,
+main .content .users-details .recent-orders table,
+main .content .houses-details .recent-orders table,
+main .content .assign-houses-details .recent-orders table,
+main .content .orders-details .recent-orders table,
+main .content .payments-details .recent-orders table,
+main .content .payments-details .recent-orders table {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttonBox #create-owner,
+.buttonBox #update-owner,
+.buttonBox #create-tenant,
+.buttonBox #update-tenant,
+.buttonBox #submit-house,
+.buttonBox #update-house,
+.buttonBox #submit-order,
+.buttonBox #update-order,
+.buttonBox #submit-payment,
+.buttonBox #update-payment,
+.buttonBox #assign-house,
+.buttonBox #update-assign-house,
+.buttonBox #editUser {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* .image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+} */
+
+/* Owners details page */
+.owners-details .btn,
+.tenants-details .btn,
+.users-details .btn,
+.houses-details .btn,
+.assign-houses-details .btn,
+.orders-details .btn,
+.payments-details .btn {
+  padding: 0.1rem 0.8rem;
+}
+
+/* Details page */
+main .content .owners-details .recent-orders,
+main .content .tenants-details .recent-orders,
+main .content .users-details .recent-orders,
+main .content .houses-details .recent-orders,
+main .content .assign-houses-details .recent-orders,
+main .content .orders-details .recent-orders,
+main .content .payments-details .recent-orders {
+  width: 48%;
+}
+
+main .content .users-list {
+  margin-top: 4rem;
+  /* width: 80%; */
+}
+
+main .content .owners-details .owner-header,
+main .content .tenants-details .tenant-header,
+main .content .users-details .user-header,
+main .content .houses-details .house-header,
+main .content .assign-houses-details .assign-house-header,
+main .content .orders-details .order-header,
+main .content .payments-details .payment-header {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+main .content .owners-details .recent-orders table,
+main .content .tenants-details .recent-orders table,
+main .content .users-details .recent-orders table,
+main .content .houses-details .recent-orders table,
+main .content .assign-houses-details .recent-orders table,
+main .content .orders-details .recent-orders table,
+main .content .payments-details .recent-orders table {
+  width: 100%;
+  display: flex;
+  padding-bottom: 4rem;
+}
+
+main .content .owners-details .recent-orders table .detail-table-header,
+main .content .tenants-details .recent-orders table .detail-table-header,
+main .content .users-details .recent-orders table .detail-table-header,
+main .content .houses-details .recent-orders table .detail-table-header,
+main .content .assign-houses-details .recent-orders table .detail-table-header,
+main .content .orders-details .recent-orders table .detail-table-header,
+main .content .payments-details .recent-orders table .detail-table-header {
+  display: flex;
+  flex-direction: column;
+}
+
+main .content .owners-details .recent-orders table .detail-table-header tr,
+main .content .tenants-details .recent-orders table .detail-table-header tr,
+main .content .users-details .recent-orders table .detail-table-header tr,
+main .content .houses-details .recent-orders table .detail-table-header tr,
+main
+  .content
+  .assign-houses-details
+  .recent-orders
+  table
+  .detail-table-header
+  tr,
+main .content .orders-details .recent-orders table .detail-table-header tr,
+main .content .payments-details .recent-orders table .detail-table-header tr {
+  margin-right: 5rem;
+}
+
+main .content .owners-details .recent-orders table .detail-table-header th,
+main .content .tenants-details .recent-orders table .detail-table-header th,
+main .content .users-details .recent-orders table .detail-table-header th,
+main .content .houses-details .recent-orders table .detail-table-header th,
+main
+  .content
+  .assign-houses-details
+  .recent-orders
+  table
+  .detail-table-header
+  th,
+main .content .orders-details .recent-orders table .detail-table-header th,
+main .content .payments-details .recent-orders table .detail-table-header th {
+  height: 2.8rem;
+  color: var(--color-dark-variant);
+}
+
+main .content .owners-details .recent-orders table .detail-table-body td,
+main .content .tenants-details .recent-orders table .detail-table-body td,
+main .content .users-details .recent-orders table .detail-table-body td,
+main .content .houses-details .recent-orders table .detail-table-body td,
+main .content .assign-houses-details .recent-orders table .detail-table-body td,
+main .content .orders-details .recent-orders table .detail-table-body td,
+main .content .payments-details .recent-orders table .detail-table-body td {
+  height: 2.8rem;
+  margin-top: 0.13rem;
+  border: none;
+  color: var(--color-dark-variant);
+}
+
+main
+  .content
+  .owners-details
+  .recent-orders
+  table
+  .detail-table-body
+  td:first-child,
+main
+  .content
+  .tenants-details
+  .recent-orders
+  table
+  .detail-table-body
+  td:first-child,
+main
+  .content
+  .users-details
+  .recent-orders
+  table
+  .detail-table-body
+  td:first-child,
+main
+  .content
+  .houses-details
+  .recent-orders
+  table
+  .detail-table-body
+  td:first-child,
+main
+  .content
+  .assign-houses-details
+  .recent-orders
+  table
+  .detail-table-body
+  td:first-child,
+main
+  .content
+  .orders-details
+  .recent-orders
+  table
+  .detail-table-body
+  td:first-child,
+main
+  .content
+  .payments-details
+  .recent-orders
+  table
+  .detail-table-body
+  td:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .content .owners-details .recent-orders table .detail-table-body td .prof,
+main .content .tenants-details .recent-orders table .detail-table-body td .prof,
+main .content .users-details .recent-orders table .detail-table-body td .prof {
+  margin-left: 8rem;
+}
+
+main .content .owners-details .recent-orders table .detail-table-body td img,
+main .content .tenants-details .recent-orders table .detail-table-body td img,
+main .content .users-details .recent-orders table .detail-table-body td img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+main .content .users-list table .table-body td img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+main .content .recent-orders .d-owner-btn,
+main .content .recent-orders .d-tenant-btn,
+main .content .recent-orders .d-house-btn,
+main .content .recent-orders .d-payment-btn,
+main .content .recent-orders .d-assign-house-btn,
+main .content .recent-orders .d-order-btn,
+main .content .recent-orders .d-user-btn {
+  margin-top: -12%;
+  color: #333;
+}
+
+main .content .recent-orders #editBtn {
+  border: 1px solid #bbb;
+  background-color: #41f1b6;
+}
+
+/* #editUserBtn, #deleteUserBtn {
+  display: inline-block;
+  height: 1.8rem;
+  padding-inline: 1.2rem;
+  color: var(--color-primary);
+  text-align: center;
+  line-height: 1.5rem;
+  text-decoration: none;
+  background-color: var(--color-white);
+  border-radius: var(--border-raduis-1);
+  border: 1px solid #bbb;
+  cursor: pointer;
+  -webkit-transition: border 0.2s;
+  transition: border 0.2s;
+} */
+
+main .content .recent-orders #editBtn:hover {
+  background-color: #6ed0af;
+  color: var(--color-white);
+}
+
+main .content .recent-orders #deleteBtn {
+  background-color: #ff7782;
+  outline: none;
+}
+
+main .content .recent-orders #deleteBtn:hover {
+  color: var(--color-white);
+  background-color: #e1828a;
+  border: none;
+}
+
+/* LOGIN & SIGN UP PAGE */
+
+.login,
+.sign-up {
+  position: absolute;
+  width: 500px;
+  background-color: var(--color-white);
+  /* top: 5vh; */
+  left: 50%;
+  transform: translate(-50%, 20%);
+  padding-inline: 4rem;
+  border-radius: var(--border-raduis-1);
+  padding-top: 3rem;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+.sign-up {
+  position: absolute;
+  transform: translate(-50%, 5%);
+}
+
+main .login:hover,
+main .sign-up:hover,
+main .edit-user {
+  box-shadow: none;
+}
+
+.login h2,
+.sign-up h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.login h3,
+.sign-up h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.login form,
+.sign-up form,
+.edit-user form {
+  margin-block: 2rem;
+}
+
+.login form .input-groups .input-group,
+.sign-up form .input-groups .input-group,
+.edit-user form .input-groups .input-group {
+  width: 100%;
+  font-size: 1em;
+  margin: 2em 0;
+  position: relative;
+}
+
+.login form input,
+.login form select,
+.sign-up form input,
+.sign-up form select,
+.edit-user form input,
+.edit-user form select {
+  border: 1px solid #f2f2f2;
+  padding-block: 1.5rem;
+  padding-inline: 2rem;
+  width: 100%;
+  margin-block: 0.5rem;
+  background: transparent;
+  font-size: 1.1rem;
+}
+
+.edit-user form input,
+.edit-user form select {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: var(--border-raduis-1);
+}
+
+.login form input:focus,
+.sign-up form input:focus {
+  border-color: var(--color-primary);
+}
+
+.edit-user form input:focus {
+  border-color: #333;
+}
+
+.login .sign-in-btn,
+.sign-up .sign-in-btn {
+  background-color: var(--color-primary);
+  width: 150px;
+  height: 50px;
+  color: var(--color-white);
+  font-size: 1rem;
+  /* margin-bottom: 1rem; */
+}
+
+.login p,
+.sign-up p,
+.edit-user p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-block: 1.5rem;
+}
+
+.login p a,
+.sign-up p a,
+.edit-user p a {
+  font-size: 1.3rem;
+  color: blue;
+  text-decoration: underline;
+}
+/* 
+form .profile-label {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 2px dashed #6990f2;
+  position: relative;
+} */
+
+form .file-label,
+form .file-label,
+form .file-label,
+form .file-label {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 2px dashed #6990f2;
+  position: relative;
+}
+
+form .file-label .image-preview,
+form .file-label .image-preview,
+form .file-label .image-preview,
+form .file-label .image-preview {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 5px;
+  width: 70px;
+}
+
+form .input-groups .input-group label small,
+form .input-groups .input-group label small {
+  align-self: flex-start;
+}
+
+form :where(span, p),
+form :where(i, p),
+form :where(i, p),
+form :where(i, p) {
+  color: #6990f2;
+}
+
+form span.upload-icon,
+form span.upload-icon,
+form span.upload-icon,
+form span.upload-icon {
+  margin-left: 17rem;
+  font-size: 50px;
+}
+
+.login form p,
+.sign-up form p,
+.edit-user form p {
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+/* Edit User Page */
+main .content .users {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 30px;
+  border-radius: var(--border-raduis-1);
+}
+
+main .content .users .recent-orders .profile {
+  position: relative;
+}
+
+main .content .users .recent-orders .profile img.user-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 7rem;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.88);
+}
+main .content .users .recent-orders .profile img.image-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 7rem;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.88);
+  display: none;
+}
+
+.profile span#edit-prof {
+  position: absolute;
+  top: 7rem;
+  left: 15rem;
+  display: inline-block;
+  font-size: 2rem;
+  padding: 4px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 50%;
+}
+
+main .content .users .recent-orders .profile .user-info {
+  margin: 2rem 0;
+}
+
+main .content .users .recent-orders .profile .user-info > .username,
+.email {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-block-start: 0.5rem;
+}
+
+#edit-user,
+#change-password,
+.logoutBtn {
+  width: 150px;
+  height: 40px;
+  color: var(--color-white);
+  margin-inline: 10px;
+  font-size: 0.7rem;
+  border: none;
+}
+
+#edit-user {
+  background: var(--color-success);
+}
+
+#change-password {
+  background: var(--color-primary);
+}
+
+.logoutBtn {
+  border: 1px solid #ccc;
+  color: #333;
+  margin: 10px auto;
+}
+
+.hideForUser {
+  display: none;
+}
+
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+  display: none;
+}
+.modal {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 50%;
+  background-color: var(--color-background);
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.88);
+  z-index: 4;
+}
+
+.modal.edit-user {
+  width: 40%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(25, 25, 25, 0.7);
+  place-items: center;
+  z-index: 3;
+}
+.show-modal {
+  font-weight: 600;
+  border: none;
+}
+.close-modal {
+  position: absolute;
+  margin-top: 5px;
+  top: 0;
+  right: 2rem;
+  font-size: 3rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.form .form-header {
+  color: var(--color-info-dark);
+  padding: 1rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.form .input-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1em;
+  margin: 2em 0;
+  position: relative;
+}
+
+form .input-groups .input-group small {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -1rem;
+  display: none;
+}
+
+form .input-groups .input-group textarea ~ small {
+  margin-left: 1rem;
+}
+
+form .input-groups .input-group input.error,
+form .input-groups .input-group textarea.error {
+  border-color: var(--color-danger);
+}
+
+form .input-groups .input-group small.error {
+  color: var(--color-danger);
+}
+
+.form input,
+.form select,
+.form textarea {
+  height: 3rem;
+  width: 55%;
+  margin: 0.4rem 0;
+  border: none;
+  outline: none;
+  background: rgba(244, 245, 247);
+  /* background: transparent ; */
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 10px;
+  border-bottom: var(--color-primary) 1px solid;
+  border-right: var(--color-primary) 1px solid;
+  font-size: 1.1rem;
+  padding-left: 0.5em;
+  padding-right: 20px;
+  /* color: var(--color-info-dark); */
+}
+
+.form select::after {
+  content: "\25BC";
+  width: 100rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #111e88;
+  z-index: 10;
+}
+
+.form .file-label {
+  width: 55%;
+}
+form textarea {
+  height: 6rem;
+  padding-top: 1rem;
+}
+
+.form input[type="submit"],
+.form input[type="cancel"] {
+  background-color: var(--color-primary-);
+  width: 10rem;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.form input[type="cancel"] {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.form input[type="submit"]:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.form input[type="cancel"]:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  transition: all 300ms ease;
+}
+
+.form #picture,
+.sign-up-form #picture {
+  width: 5rem;
+  height: 5rem;
+  margin-top: -1.3rem;
+}
+
+/* Modal end */
+
+/* notification start */
+
+.buttons button {
+  color: var(--color-white);
+  border: 0;
+  outline: 0;
+  width: 120px;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#toast-box {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.toast {
+  width: 400px;
+  height: 75px;
+  background-color: #fff;
+  font-weight: 500;
+  margin: 15px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  position: relative;
+  transform: translate(100%);
+  animation: moveleft 0.2s linear forwards;
+}
+
+@keyframes moveleft {
+  100% {
+    transform: translate(0);
+  }
+}
+.toast span.notification-icon {
+  margin: 0 20px;
+  font-size: 35px;
+}
+
+.toast.success .notification-icon {
+  color: #41f1b6;
+}
+
+.toast.error .notification-icon {
+  color: #ff7782;
+}
+
+.toast.warning .notification-icon {
+  color: #ffbb55;
+}
+
+.toast::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #41f1b6;
+  animation: anim 4s linear forwards;
+}
+
+@keyframes anim {
+  100% {
+    width: 0;
+  }
+}
+
+.toast.success::after {
+  background: #41f1b6;
+}
+
+.toast.error::after {
+  background: #ff7782;
+}
+
+.toast.warning::after {
+  background: #ffbb55;
+}
+
+/* notification end */
+/* Pagination start */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #383838;
+  padding: 1px 30px;
+  margin-top: -2.5rem;
+  border-radius: var(--card-border-raduis);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.pagination ul {
+  margin: 15px 15px;
+}
+
+.pagination ul li {
+  display: inline-block;
+  margin: 0 10px;
+  background: var(--color-info-light);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 30px;
+  cursor: pointer;
+  /* animation */
+  background-position: 0 -45px;
+  transition: background-position 0.5s;
+}
+
+.pagination ul li.active {
+  color: #fff;
+  /* background-image: linear-gradient(#ff4568, #ff4568); */
+  background-image: linear-gradient(#4700bc, #4700bc);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transition: background-position 0.5s;
+}
+
+.pagination .prev-btn,
+.next-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 500;
+  color: #383838;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination .prev-btn img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.pagination .next-btn img {
+  width: 24px;
+  margin-left: 10px;
+  transform: rotate(180deg);
+}
+
+/* Pagination end */
+
+/* ==================== MEDIA QUERIES  ======================== */
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 94%;
+  }
+
+  header .logo h2 {
+    display: none;
+  }
+
+  aside .sidebar h3 {
+    display: none;
+  }
+
+  aside .sidebar .sidebar-item {
+    width: 5.6rem;
+  }
+
+  aside .sidebar .sidebar-item:last-child {
+    position: relative;
+    margin-top: 1.8rem;
+  }
+
+  /* main .insights {
+    
+  } */
+
+  /* main .insights .owners,
+  main .insights .tenants,
+  main .insights .houses,
+  main .insights .orders,
+  main .insights .payments {
+    padding: 3rem 4rem;
+  } */
+
+  main .recent-orders {
+    width: 94%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 1rem 0 0 8.8rem;
+  }
+
+  main .recent-orders table {
+    width: 83vw;
+  }
+
+  main .main .owners-details .recent-orders table {
+    width: 100%;
+  }
+}
+/* ==================== MEDIA QUERIES  ======================== */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  /* header .header-center{
+    position: fixed;
+    z-index: 4;
+    margin-bottom: 2rem;
+  } */
+  header .left-section.logo {
+    margin-left: 4rem;
+    visibility: hidden;
+  }
+
+  header .left-section.logo > h2 {
+    display: inline;
+  }
+
+  .header-center .right-section {
+    width: 94%;
+  }
+
+  .header-center .right-section .theme-toggler {
+    width: 4.4rem;
+    position: absolute;
+    left: 66%;
+    margin-top: 1rem;
+  }
+
+  .header-center .right-section .profile {
+    position: absolute;
+    right: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .header-center .right-section .profile .info {
+    display: none;
+  }
+
+  .header-center .left-section a {
+    margin-left: 3rem;
+  }
+
+  .header-center .right-section button {
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-dark);
+    position: absolute;
+    margin-top: 1rem;
+    left: 1.5rem;
+  }
+
+  .header-center .right-section button span {
+    font-size: 2rem;
+  }
+  /* Header end */
+  aside {
+    position: fixed;
+    left: -100%;
+    background: var(--color-background);
+    width: 18rem;
+    z-index: 3;
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    /* height: 100vh; */
+    padding-right: var(--card-padding);
+    display: none;
+    animation: showMenu 400ms ease forwards;
+  }
+
+  @keyframes showMenu {
+    to {
+      left: 0;
+    }
+  }
+
+  aside .sidebar > h3 {
+    display: inline;
+  }
+
+  aside .sidebar .sidebar-item h3 {
+    display: block;
+    padding-right: 1rem;
+  }
+  aside .sidebar .sidebar-item {
+    width: 100%;
+    height: 3.4rem;
+  }
+
+  aside .close {
+    display: inline-block;
+    cursor: pointer;
+  }
+  main {
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+
+  main .insights .owners,
+  main .insights .tenants,
+  main .insights .orders,
+  main .insights .houses,
+  main .insights .payments {
+    width: 100%;
+    padding: 3rem;
+  }
+
+  /* main .insights .tenants,
+  main .insights .orders,
+  main .insights .houses,
+  main .insights .payments {
+    margin: 0;
+  } */
+
+  main .insights .owners .content-left {
+    margin: 0;
+  }
+  main .insights .owners .content-right h2,
+  main .insights .tenants .content-right h2,
+  main .insights .orders .content-right h2,
+  main .insights .houses .content-right h2,
+  main .insights .payments .content-right h2 {
+    margin-top: -3rem;
+  }
+
+  main .content .recent-orders,
+  main .content .owners .recent-orders,
+  main .content .owners-details .recent-orders,
+  main .content .tenant .recent-orders,
+  main .content .tenants-details .recent-orders,
+  main .content .users-details .recent-orders,
+  main .content .houses .recent-orders,
+  main
+    .content
+    .houses-details
+    .recent-orders
+    main
+    .content
+    .assign-houses
+    .recent-orders,
+  main .content .assign-houses-details .recent-orders {
+    position: relative;
+    margin: 0rem 0;
+    margin-top: 1.2rem;
+    margin-left: -0.9rem;
+    width: 100%;
+  }
+
+  main .content .owners .recent-orders table,
+  main .content .owners-details .recent-orders table,
+  main .content .tenant .recent-orders table,
+  main .content .tenants-details .recent-orders table,
+  main .content .users-details .recent-orders table,
+  main .content .houses .recent-orders table,
+  main
+    .content
+    .houses-details
+    .recent-orders
+    table
+    main
+    .content
+    .assign-houses
+    .recent-orders
+    table,
+  main .content .assign-houses-details .recent-orders table {
+    /* width: 30rem; */
+    width: 100%;
+    margin: 0;
+  }
+
+  /* .owners .recent-orders table .image,
+  .tenant .recent-orders table .image,
+  .houses .recent-orders table .image {
+    display: none;
+  } */
+
+  .owners-details .recent-orders table .prof,
+  .tenants-details .recent-orders table .prof,
+  .users-details .recent-orders table .prof {
+    margin-right: 1rem;
+  }
+
+  .modal {
+    width: 90%;
+    margin-left: -0.8rem;
+    display: none;
+  }
+
+  .login,
+  .sign-up {
+    width: 80%;
+    margin: left 1rem;
+  }
+
+  main .content .owners-details .recent-orders {
+    width: 100%;
+  }
+
+  main .content .users {
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 7%;
+    padding-left: 11%;
+  }
+
+  main .content .users .profile {
+    margin: 0 auto;
+  }
+
+  .modal.edit-user {
+    width: 100%;
+  }
+  button#change-password,
+  button#edit-user {
+    margin-left: 26%;
+    margin-block: 2px;
+  }
+}

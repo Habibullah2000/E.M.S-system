@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/css/bootstrap.min.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    /> -->
+    <!-- Styles -->
+    <!-- <link rel="stylesheet" href="./css/style/aside.css" /> -->
+    <!-- <link rel="stylesheet" href="./css/style/main.css" /> -->
+    <!-- <link rel="stylesheet" href="./css/style/right.css" /> -->
+    <link rel="stylesheet" href="./css/style/general.css" />
+    <link rel="stylesheet" href="./css/style/media.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="container login">
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <img src="./images/icons/app-icon1.png" alt="logo" />
+          <h2>Employee Management <span class="primary">System</span></h2>
+        </div>
+        <div class="close" id="close-btn">
+          <i class="bi bi-x-lg"></i>
+        </div>
+      </div>
+      <div class="sidebar">
+        <a href="#" style="margin-left: 1rem"
+          ><p>Hi</p>
+          , <span class="username"></span> <br />
+          <span class="userType"></span>
+          <img
+            class="userProfile"
+            style="width: 50px; height: 50px; border-radius: 50%"
+          />
+        </a>
+        <a href="dashboard.html"
+          ><i class="bi bi-grid-fill"></i
+          ><span class="menu-item">Dashboard</span></a
+        >
+        <a href="users.html"
+          ><i class="bi bi-clipboard-check"></i
+          ><span class="menu-item">Users</span></a
+        >
+        <a href="employees-list.html">
+          <i class="bi bi-people"></i
+          ><span class="menu-item">Employees</span></a
+        >
+        <a href="jobs-list.html"
+          ><i class="bi bi-graph-up"></i><span class="menu-item">Jobs</span></a
+        >
+        <a href="department.html"
+          ><i class="bi bi-card-checklist"></i
+          ><span class="menu-item">Department</span></a
+        >
+        <a href="index.html"
+          ><i class="bi bi-box-arrow-right"></i
+          ><span class="menu-item">Logout</span></a
+        >
+      </div>
+    </aside>
+    <!-- / Aside -->
+
+    <!-- <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark px-5"
+      style="font-size: 20px"
+    >
+      <div class="container-fluid">
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navebarSupportedContent"
+          aria-controls="navebarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navebarSupportedContent">
+          <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a href="users.html" class="nav-link" aria-current="page"
+                >Users</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="employees-list.html" class="nav-link" aria-current="page"
+                >Employees</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="jobs-list.html" class="nav-link">Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a href="department.html" class="nav-link">Departments</a>
+            </li>
+          </ul>
+
+          <ul class="logout navbar-nav mr-auto mb-2 mb-lg-0" id="logout">
+            <li class="nav-item">
+              <a class="nav-link">Logout</a>
+            </li>
+          </ul>
+          <a href="#" class="navbar-brand" style="margin-left: 1rem"
+            >Hi, <span class="username"></span> <br />
+            <span class="userType"></span>
+            <img
+              class="userProfile"
+              style="
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                position: absolute;
+                top: 1rem;
+                right: 2rem;
+              "
+            />
+          </a>
+        </div>
+      </div>
+    </nav> -->
+    <!-- Dashnoard Page -->
+
+    <main class="px-5 order">
+      <h1 class="h">Dashoard</h1>
+
+      <div class="insights">
+        <div class="sales">
+          <span class="material-symbols-sharp">Employees</span>
+          <div class="middle">
+            <div class="left">
+              <h3>All Employees</h3>
+              <h1 id="employeeNumber">25</h1>
+            </div>
+            <h1>
+              <i class="bi bi-people-fill bi-lg"></i>
+            </h1>
+          </div>
+          <div>
+            <small class="text-muted">your employee</small>
+          </div>
+        </div>
+
+        <!-- END OF SALES -->
+
+        <div class="expenses">
+          <span class="material-symbols-sharp"> Jobs </span>
+          <div class="middle">
+            <div class="left">
+              <h3>All Jobs</h3>
+              <h1 id="jobsNumber">5</h1>
+            </div>
+            <div>
+              <h1><i class="bi bi-pc-display-horizontal"></i></h1>
+            </div>
+          </div>
+          <div>
+            <small class="text-muted">your jobs</small>
+          </div>
+        </div>
+
+        <!-- END OF EXPENSES -->
+
+        <div class="income">
+          <span class="material-symbols-sharp"> Salary</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Salary</h3>
+              <h1>$10500</h1>
+            </div>
+            <div>
+              <h1><i class="bi bi-currency-dollar"></i></h1>
+            </div>
+          </div>
+          <div>
+            <small class="text-muted">your salary</small>
+          </div>
+        </div>
+
+        <!-- END OF INCOME -->
+      </div>
+
+      <div class="recent-orders">
+        <h3>Recent Jobs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Job ID</th>
+              <th>Job Name</th>
+              <th>Job Description</th>
+            </tr>
+          </thead>
+          <tbody class="table-body"></tbody>
+        </table>
+        <a href="jobs-list.html">Show All</a>
+      </div>
+    </main>
+
+    <!-- <footer class="footer1">
+      <div class="social-media-icons">
+        <a href="https://www.facebook.com"><i class="fa fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </footer> -->
+
+    <script src="./js/dashboard.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="js/js/bootstrap.min.js"></script>
+  </body>
+</html>

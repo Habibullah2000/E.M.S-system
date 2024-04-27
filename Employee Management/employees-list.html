@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style/general.css" />
+    <link rel="stylesheet" href="./css/style/media.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  </head>
+  <body class="container login">
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <img src="./images/icons/app-icon1.png" alt="logo" />
+          <h2>Employee Management <span class="primary">System</span></h2>
+        </div>
+        <div class="close" id="close-btn">
+          <i class="bi bi-x-lg"></i>
+        </div>
+      </div>
+      <div class="sidebar">
+        <a href="#" style="margin-left: 1rem"
+          ><p>Hi</p>
+          , <span class="username"></span> <br />
+          <span class="userType"></span>
+          <img
+            class="userProfile"
+            style="width: 50px; height: 50px; border-radius: 50%"
+          />
+        </a>
+        <a href="dashboard.html"
+          ><i class="bi bi-grid-fill"></i
+          ><span class="menu-item">Dashboard</span></a
+        >
+        <a href="users.html"
+          ><i class="bi bi-clipboard-check"></i
+          ><span class="menu-item">Users</span></a
+        >
+        <a href="employees-list.html">
+          <i class="bi bi-people"></i
+          ><span class="menu-item">Employees</span></a
+        >
+        <a href="jobs-list.html"
+          ><i class="bi bi-graph-up"></i><span class="menu-item">Jobs</span></a
+        >
+        <a href="department.html"
+          ><i class="bi bi-card-checklist"></i
+          ><span class="menu-item">Department</span></a
+        >
+        <a href="index.html"
+          ><i class="bi bi-box-arrow-right"></i
+          ><span class="menu-item">Logout</span></a
+        >
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <div class="container-fluid" style="height: 900px; margin-left: 50px; margin-top: 45px;">
+      <!-- <div class="row mt-3">
+        <div class="col-lg-3 col-md-3">
+          <div class="list-group small">
+            <div class="list-group-item active">Employee Data</div>
+            <a
+              href="#"
+              class="list-group-item"
+              data-bs-toggle="modal"
+              data-bs-target="#add_employee"
+              id="addEmployee"
+              >Add Employee</a
+            >
+          </div>
+        </div>
+ -->
+
+ <div class="d-flex w-full mt-5 ml-2" style="justify-content: space-between; align-items: center;">
+  <h2 style="color: white;">Employees</h2>
+    <div style="width: 80px; height: 80px; cursor: pointer; border-radius: 50%; background-color: #00cb71;"
+              data-bs-toggle="modal"
+              data-bs-target="#add_employee"
+              id="addEmployee">
+      <span style="font-size: 40px; color: white;  display: inline-block; margin: 20px 20px;" class="fa fa-user-plus"></span>
+    </div>
+ </div>
+
+
+        <div class="col-lg-12 col-md-9 pt-2">
+          <table
+            class="table table-striped table-hover bg-light small"
+            id="employeeTable"
+          >
+            <tr class="table-dark">
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Department</th>
+              <th>Details</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+            <tbody class="table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- add-employee modale -->
+    <div
+      class="modal fade"
+      id="add_employee"
+      tabindex="-1"
+      aria-labelledby="add-employeeLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="add_employeeLabel">Add Employee</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="addEmployeeForm" enctype="multipart/form-data">
+              <div class="mb-3">
+                <input
+                  id="firstName"
+                  type="text"
+                  class="form-control form-control-sm"
+                  required
+                  placeholder="enter name"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  id="lastName"
+                  type="text"
+                  class="form-control form-control-sm"
+                  required
+                  placeholder="enter lastName"
+                />
+              </div>
+              <div class="mb-3">
+                <select id="gender" class="form-control form-control-sm">
+                  <option value="male">Male</option>
+                  <option value="male">Female</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <input
+                  id="email"
+                  type="email"
+                  class="form-control form-control-sm"
+                  required
+                  placeholder="enter email"
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  id="address"
+                  type="text"
+                  class="form-control form-control-sm"
+                  required
+                  placeholder="enter address"
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  id="salary"
+                  type="text"
+                  class="form-control form-control-sm"
+                  required
+                  placeholder="enter salary"
+                />
+              </div>
+              <div class="mb-3">
+                <select
+                  id="dep_id"
+                  class="form-control form-control-sm"
+                ></select>
+              </div>
+              <div class="mb-3">
+                <div class="upload file-label" id="file">
+                  <input
+                    type="file"
+                    name="file"
+                    id="img"
+                    class="file-input"
+                    required
+                  />
+                  <!-- <span class="material-icons-sharp upload-icon"
+                    >cloud_upload_icon</span
+                  > -->
+                  <p>Brows Image to Upload</p>
+                  <img class="image-preview" alt="" />
+                  <small style="margin-left: -17rem"></small>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <button
+                  type="button"
+                  class="btn btn-success btn-sm"
+                  id="createEmployee"
+                  data-bs-dismiss="modal"
+                >
+                  Add Employee
+                </button>
+              </div>
+            </form>
+            <div id="toast-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Employee Detail Box -->
+
+    <div
+      class="modal fade"
+      id="employeeDetails"
+      tabindex="-1"
+      aria-labelledby="employeeDetailsLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog relative">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="employeeDetailsLabel">
+              Employee Details
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <table
+              class="d-flex table table-borderless"
+              style="border: none; outline: none"
+            >
+              <thead style="padding-right: 10px">
+                <tr>
+                  <th>First Name</th>
+                </tr>
+                <tr>
+                  <th>Last Name</th>
+                </tr>
+                <tr>
+                  <th>Gender</th>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                </tr>
+                <tr>
+                  <th>Adress</th>
+                </tr>
+                <tr>
+                  <th>Salary</th>
+                </tr>
+                <tr>
+                  <th>Department</th>
+                </tr>
+              </thead>
+              <tbody class="detail-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- edit-employee modale -->
+    <div
+      class="modal fade"
+      id="employeeEditDetails"
+      tabindex="-1"
+      aria-labelledby="employeeEditLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="employeeEditLabel">Edit Employee</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="editEmployeeForm">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  required
+                  id="eName"
+                  placeholder="enter name"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  required
+                  id="eLastName"
+                  placeholder="enter lastname"
+                />
+              </div>
+              <div class="mb-3">
+                <select id="eGender" class="form-control form-control-sm">
+                  <option value="male">Male</option>
+                  <option value="male">Female</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control form-control-sm"
+                  required
+                  id="eEmail"
+                  placeholder="enter email"
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  required
+                  id="eAddress"
+                  placeholder="Adress"
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  required
+                  id="eSalary"
+                  placeholder="Salary"
+                />
+              </div>
+              <div class="mb-3">
+                <select
+                  id="edep_id"
+                  class="form-control form-control-sm"
+                ></select>
+              </div>
+
+              <div class="mb-3">
+                <div class="upload file-label" id="file">
+                  <input
+                    type="file"
+                    name="file"
+                    id="eFile"
+                    class="file-input"
+                    required
+                  />
+                  <!-- <span class="material-icons-sharp upload-icon"
+                    >cloud_upload_icon</span
+                    > -->
+                  <p>Brows Image to Update</p>
+                  <small style="margin-left: -17rem"></small>
+                </div>
+                <img
+                  style="width: 100px; height: 100px"
+                  id="image-preview"
+                  alt=""
+                />
+              </div>
+              <!-- <p id="image-preview"></p> -->
+
+              <div class="mb-3">
+                <button
+                  type="button"
+                  id="editEmployeeId"
+                  class="btn btn-success btn-sm"
+                  data-bs-dismiss="modal"
+                >
+                  Edit Employee
+                </button>
+              </div>
+            </form>
+            <div id="toast-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="js/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/employees/employee.js"></script>
+  </body>
+</html>

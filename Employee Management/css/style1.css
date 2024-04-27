@@ -1,0 +1,109 @@
+.login,
+.sign-up {
+  position: absolute;
+  width: 500px;
+  background-color: var(--color-white);
+  /* top: 5vh; */
+  left: 50%;
+  transform: translate(-50%, 20%);
+  padding-inline: 4rem;
+  border-radius: var(--border-raduis-1);
+  padding-top: 3rem;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+.sign-up {
+  position: absolute;
+  transform: translate(-50%, 5%);
+}
+
+main .login:hover,
+main .sign-up:hover,
+main .edit-user {
+  box-shadow: none;
+}
+
+.login h2,
+.sign-up h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.login h3,
+.sign-up h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.login form,
+.sign-up form,
+.edit-user form {
+  margin-block: 2rem;
+}
+
+.login form .input-groups .input-group,
+.sign-up form .input-groups .input-group,
+.edit-user form .input-groups .input-group {
+  width: 100%;
+  font-size: 1em;
+  margin: 2em 0;
+  position: relative;
+}
+
+.login form input,
+.login form select,
+.sign-up form input,
+.sign-up form select,
+.edit-user form input,
+.edit-user form select {
+  border: 1px solid #f2f2f2;
+  padding-block: 1.5rem;
+  padding-inline: 2rem;
+  width: 100%;
+  margin-block: 0.5rem;
+  background: transparent;
+  font-size: 1.1rem;
+}
+
+.edit-user form input,
+.edit-user form select {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: var(--border-raduis-1);
+}
+
+.login form input:focus,
+.sign-up form input:focus {
+  border-color: var(--color-primary);
+}
+
+.edit-user form input:focus {
+  border-color: #333;
+}
+
+.login .sign-in-btn,
+.sign-up .sign-in-btn {
+  background-color: var(--color-primary);
+  width: 150px;
+  height: 50px;
+  color: var(--color-white);
+  font-size: 1rem;
+  /* margin-bottom: 1rem; */
+}
+
+.login p,
+.sign-up p,
+.edit-user p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-block: 1.5rem;
+}
+
+.login p a,
+.sign-up p a,
+.edit-user p a {
+  font-size: 1.3rem;
+  color: rgb(193, 200, 193);
+  text-decoration: none;
+}

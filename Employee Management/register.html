@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="./css/style1.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="login">
+    <div class="container">
+      <main>
+        <div class="main">
+          <div class="content">
+            <div class="register">
+              <h2>REGISTER</h2>
+
+              <form id="registrationForm">
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    id="username"
+                    class="form-control form-control-sm"
+                    placeholder="Username"
+                    required
+                  />
+                  <small></small>
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    id="lastname"
+                    class="form-control form-control-sm"
+                    placeholder="Lastname"
+                    required
+                  />
+                  <small></small>
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control form-control-sm"
+                    placeholder="Email"
+                    required
+                  />
+                  <small></small>
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control form-control-sm"
+                    placeholder="Password"
+                    required
+                  />
+                  <small></small>
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="file"
+                    id="file"
+                    class="form-control form-control-sm"
+                    required
+                  />
+                  <small></small>
+                </div>
+                <div class="mb-3">
+                  <button type="button" id="register" class="btn btn-info">
+                    Register
+                  </button>
+                </div>
+              </form>
+
+              <p>Already have an account? <a href="index.html">Login</a></p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="./js/users/register.js"></script>
+  </body>
+</html>
